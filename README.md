@@ -243,6 +243,7 @@ Rows matched: 1  Changed: 1  Warnings: 0
 ```
 
 ```console
+-- Tx2:
 mysql> select * from user  where id = 1;
 +----+-----------------+----------------------+------------+---------+
 | id | name            | email                | birthdate  | balance |
