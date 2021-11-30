@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+
+  db0:
+    image: percona/percona-server:8.0
+    container_name: db0
+    ports:
+      - "3307:3307"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: always
+    environment:
+      - MYSQL_USER=dbuser
+      - MYSQL_PASSWORD=dbpassword
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=db
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+
